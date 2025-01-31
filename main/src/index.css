@@ -1,0 +1,63 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer utilities {
+  /* Slider styles */
+  input[type="range"] {
+    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @apply w-4 h-4 rounded-full bg-blue-600 cursor-pointer hover:bg-blue-700;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    @apply w-4 h-4 rounded-full bg-blue-600 cursor-pointer hover:bg-blue-700 border-0;
+  }
+
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
+
+@layer components {
+  .control-panel {
+    @apply bg-gray-50 rounded-xl p-6 space-y-4 hover:shadow-md transition-all duration-300;
+  }
+
+  .control-header {
+    @apply flex items-center space-x-2 mb-4 text-lg font-semibold text-gray-800;
+  }
+
+  .slider-label {
+    @apply flex justify-between text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .export-select {
+    @apply w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm;
+  }
+
+  .control-button {
+    @apply bg-white hover:bg-gray-100 px-4 py-2 rounded-lg border border-gray-200 
+           transition-colors duration-200 flex items-center justify-center space-x-2
+           text-sm font-medium text-gray-700 hover:text-gray-900;
+  }
+}
+
+/* Base transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
